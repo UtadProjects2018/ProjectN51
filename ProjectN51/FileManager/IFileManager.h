@@ -6,9 +6,11 @@
 //  Copyright © 2018 Ingrid Guerrero. All rights reserved.
 //
 
+#pragma once
+
 namespace FileSystem
 {
-    typedef void* FileObject;
+    typedef void *FileObject;
     
     enum FileType
     {

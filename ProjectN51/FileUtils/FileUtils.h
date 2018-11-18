@@ -7,9 +7,23 @@
 //
 
 #include <stdio.h>
+#include "IFileManager.h"
 
 namespace FileSystemUtils
 {
+    const int MaxBufferCharacter = 10;
+    
+    enum FileSystemException
+    {
+        FileSystemExceptionOpenFile,
+        FileSystemExceptionReadFile,
+        FileSystemExceptionWriteFile
+    };
+    
     const char *GetFileNameType(int fileType);
     FILE *GetFileObject(void *fileID);
+    void FileOperationRead(FileSystem::FileObject fileID, char *pBufferToRead);
+    void FileOperationWrite(FileSystem::FileObject fileID, int maxCharacterToWrite, char *pBufferToWrite);
+    void FileOperationClose(FileSystem::FileObject fileID);
+    FileSystem::FileObject FileOperationOpen(const char fileName[], FileSystem::FileType fileType);
 }

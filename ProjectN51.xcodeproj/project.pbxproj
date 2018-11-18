@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		13116EAA2180B53E00DC841D /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 13116EA92180B53E00DC841D /* main.cpp */; };
 		13116EB22180B7DD00DC841D /* FileManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 13116EB12180B7DD00DC841D /* FileManager.cpp */; };
+		13F1823521A210B100656833 /* Resources in CopyFiles */ = {isa = PBXBuildFile; fileRef = 13F1823321A2109F00656833 /* Resources */; };
 		13F4D2612187717400DA3BEC /* FileUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 13F4D25F2187717400DA3BEC /* FileUtils.cpp */; };
 /* End PBXBuildFile section */
 
@@ -22,6 +23,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
+		13F1823421A210AB00656833 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 7;
+			files = (
+				13F1823521A210B100656833 /* Resources in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +40,7 @@
 		13116EA92180B53E00DC841D /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		13116EB12180B7DD00DC841D /* FileManager.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = FileManager.cpp; sourceTree = "<group>"; };
 		13116EB32180B7F300DC841D /* IFileManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IFileManager.h; sourceTree = "<group>"; };
+		13F1823321A2109F00656833 /* Resources */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Resources; sourceTree = "<group>"; };
 		13F4D25F2187717400DA3BEC /* FileUtils.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = FileUtils.cpp; sourceTree = "<group>"; };
 		13F4D2602187717400DA3BEC /* FileUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FileUtils.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -66,6 +78,7 @@
 				13116EB02180B70800DC841D /* FileManager */,
 				13F4D25E2187714E00DA3BEC /* FileUtils */,
 				13116EA92180B53E00DC841D /* main.cpp */,
+				13F1823321A2109F00656833 /* Resources */,
 			);
 			path = ProjectN51;
 			sourceTree = "<group>";
@@ -73,8 +86,8 @@
 		13116EB02180B70800DC841D /* FileManager */ = {
 			isa = PBXGroup;
 			children = (
-				13116EB12180B7DD00DC841D /* FileManager.cpp */,
 				13116EB32180B7F300DC841D /* IFileManager.h */,
+				13116EB12180B7DD00DC841D /* FileManager.cpp */,
 			);
 			path = FileManager;
 			sourceTree = "<group>";
@@ -82,8 +95,8 @@
 		13F4D25E2187714E00DA3BEC /* FileUtils */ = {
 			isa = PBXGroup;
 			children = (
-				13F4D25F2187717400DA3BEC /* FileUtils.cpp */,
 				13F4D2602187717400DA3BEC /* FileUtils.h */,
+				13F4D25F2187717400DA3BEC /* FileUtils.cpp */,
 			);
 			path = FileUtils;
 			sourceTree = "<group>";
@@ -98,6 +111,7 @@
 				13116EA22180B53E00DC841D /* Sources */,
 				13116EA32180B53E00DC841D /* Frameworks */,
 				13116EA42180B53E00DC841D /* CopyFiles */,
+				13F1823421A210AB00656833 /* CopyFiles */,
 			);
 			buildRules = (
 			);

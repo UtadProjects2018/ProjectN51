@@ -10,9 +10,25 @@
 #include "IFileManager.h"
 #include "FileUtils.h"
 
+const int MAxNumberOfFiles = 10;
+
+FILE* files[MAxNumberOfFiles];
+
 FileSystem::FileObject FileSystem::OpenFile(const char *fileName, FileType fileType)
 {
-    return fopen(fileName, FileSystemUtils::GetFileNameType(fileType));
+    int fileIndex = 0;
+    for (int i = 0; i < MAxNumberOfFiles; i++)
+    {
+        if (!files[i])
+        {
+            fileIndex = i;
+            break;
+        }
+    }
+    
+    files[fileIndex] = fopen(fileName, FileSystemUtils::GetFileNameType(fileType));
+    
+    return files[fileIndex];
 }
 
 void FileSystem::CloseFile (FileObject fileID)
