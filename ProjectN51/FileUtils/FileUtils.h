@@ -22,8 +22,8 @@ namespace FileSystemUtils
     
     const char *GetFileNameType(int fileType);
     FILE *GetFileObject(void *fileID);
-    void FileOperationRead(FileSystem::FileObject fileID, char *pBufferToRead);
-    void FileOperationWrite(FileSystem::FileObject fileID, int maxCharacterToWrite, char *pBufferToWrite);
+    void FileOperationRead(const char fileName [], char *pBufferToRead);
+    void FileOperationWrite(const char fileName [], int maxCharacterToWrite, char *pBufferToWrite);
     void FileOperationClose(FileSystem::FileObject fileID);
     FileSystem::FileObject FileOperationOpen(const char fileName[], FileSystem::FileType fileType);
 }

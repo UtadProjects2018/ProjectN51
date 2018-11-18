@@ -28,8 +28,10 @@ FILE *FileSystemUtils::GetFileObject(void *fileID)
     return static_cast<FILE *>(fileID);
 }
 
-void FileSystemUtils::FileOperationRead(FileSystem::FileObject fileID, char *pBufferToRead)
+void FileSystemUtils::FileOperationRead(const char fileName [], char *pBufferToRead)
 {
+    FileSystem::FileObject fileID = FileSystem::OpenFile(fileName, FileSystem::FileTypeRead);
+    
     if (fileID == nullptr)
     {
         printf("File is null\n");
@@ -41,7 +43,7 @@ void FileSystemUtils::FileOperationRead(FileSystem::FileObject fileID, char *pBu
     if (rFile > 0)
     {
         printf("File was read success!\n");
-        printf("Read %s:", pBufferToRead);
+        printf("Read: %s\n", pBufferToRead);
         
     }
     else
@@ -49,10 +51,13 @@ void FileSystemUtils::FileOperationRead(FileSystem::FileObject fileID, char *pBu
         printf("There was an error trying to read the file");
         throw FileSystemUtils::FileSystemExceptionReadFile;
     }
+    FileSystemUtils::FileOperationClose(fileID);
 }
 
-void FileSystemUtils::FileOperationWrite(FileSystem::FileObject fileID, int maxCharacterToWrite, char *pBufferToWrite)
+void FileSystemUtils::FileOperationWrite(const char fileName [], int maxCharacterToWrite, char *pBufferToWrite)
 {
+    FileSystem::FileObject fileID = FileSystem::OpenFile(fileName, FileSystem::FileTypeWrite);
+    
     if (fileID == nullptr)
     {
         printf("File is null\n");
@@ -65,13 +70,15 @@ void FileSystemUtils::FileOperationWrite(FileSystem::FileObject fileID, int maxC
     {
         printf("File was write success!\n");
         printf("Write : \n");
-        printf("%s", pBufferToWrite);
+        printf("%s\n", pBufferToWrite);
     }
     else
     {
         printf("There was an error trying to write the file");
         throw FileSystemUtils::FileSystemExceptionWriteFile;
     }
+    
+    FileSystemUtils::FileOperationClose(fileID);
 }
 
 void FileSystemUtils::FileOperationClose(FileSystem::FileObject fileID)

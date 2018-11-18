@@ -14,23 +14,22 @@ const char fileName[] = "Resources/txt/file.txt";
 int main(int argc, const char * argv[])
 {
     char *pBufferToRead = new char[FileSystemUtils::MaxBufferCharacter];
-    FileSystem::FileObject fileObjectRead = FileSystemUtils::FileOperationOpen(fileName, FileSystem::FileTypeRead);
     
-    FileSystemUtils::FileOperationRead(fileObjectRead, pBufferToRead);
+    FileSystemUtils::FileOperationRead(fileName, pBufferToRead);
     
-    char *pWrite = new char;
+    char *pWrite = new char[FileSystemUtils::MaxBufferCharacter];
+    
     std::cout << pBufferToRead << std::endl;
-    
-    FileSystem::FileObject fileObjectWrite = FileSystemUtils::FileOperationOpen(fileName, FileSystem::FileTypeWrite);
     std::cout << "Write something ... "<< std::endl;
     std::cin >> pWrite;
     
     unsigned const int uNumberOfCharacter = static_cast<int>(strlen(pWrite));
     
-    FileSystemUtils::FileOperationWrite(fileObjectWrite, uNumberOfCharacter, pWrite);
+    FileSystemUtils::FileOperationWrite(fileName, uNumberOfCharacter, pWrite);
+    FileSystemUtils::FileOperationRead(fileName, pWrite);
     
-    FileSystemUtils::FileOperationRead(fileObjectWrite, pWrite);
-    std::cout << pWrite << std::endl;
+    delete [] pBufferToRead;
+    delete [] pWrite;
     
     return 0;
 }
