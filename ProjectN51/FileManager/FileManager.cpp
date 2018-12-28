@@ -36,15 +36,15 @@ void FileSystem::CloseFile (FileObject fileID)
     fclose(FileSystemUtils::GetFileObject(fileID));
 }
 
-unsigned int FileSystem::ReadFile (FileObject fileID, char *pReadCharacterBuffer, unsigned int uNumOfCharacters)
+unsigned int FileSystem::ReadFile (FileObject fileID, const char *pReadCharacterBuffer, unsigned int uNumOfCharacters)
 {
-    return static_cast<unsigned int>(fread(pReadCharacterBuffer,
+    return static_cast<unsigned int>(fread(&pReadCharacterBuffer,
                                            1,
                                            uNumOfCharacters,
                                            FileSystemUtils::GetFileObject(fileID)));
 }
 
-unsigned int FileSystem::WriteFile (FileObject fileID, char *pWriteCharacterBuffer, unsigned int uNumOfCharacters)
+unsigned int FileSystem::WriteFile (FileObject fileID, const char *pWriteCharacterBuffer, unsigned int uNumOfCharacters)
 {
     return static_cast<unsigned int>(fwrite(pWriteCharacterBuffer,
                                             1,
