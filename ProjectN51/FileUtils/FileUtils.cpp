@@ -54,7 +54,7 @@ void FileSystemUtils::FileOperationRead(const char fileName [], char *pBufferToR
     FileSystemUtils::FileOperationClose(fileID);
 }
 
-void FileSystemUtils::FileOperationWrite(const char fileName [], int maxCharacterToWrite, char *pBufferToWrite)
+void FileSystemUtils::FileOperationWrite(const char fileName [], int maxCharacterToWrite, const char *pBufferToWrite)
 {
     FileSystem::FileObject fileID = FileSystem::OpenFile(fileName, FileSystem::FileTypeWrite);
     

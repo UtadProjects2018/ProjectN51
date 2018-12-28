@@ -21,5 +21,5 @@ namespace FileSystem
     FileObject OpenFile (const char *fileName, FileType fileType);
     void CloseFile (FileObject fileID);
     unsigned int ReadFile (FileObject fileID, char *pReadCharacterBuffer, unsigned int uNumOfCharacters);
-    unsigned int WriteFile (FileObject fileID,char *pWriteCharacterBuffer, unsigned int uNumOfCharacters);
+    unsigned int WriteFile (FileObject fileID, const char *pWriteCharacterBuffer, unsigned int uNumOfCharacters);
 }

@@ -44,7 +44,7 @@ unsigned int FileSystem::ReadFile (FileObject fileID, char *pReadCharacterBuffer
                                            FileSystemUtils::GetFileObject(fileID)));
 }
 
-unsigned int FileSystem::WriteFile (FileObject fileID, char *pWriteCharacterBuffer, unsigned int uNumOfCharacters)
+unsigned int FileSystem::WriteFile (FileObject fileID, const char *pWriteCharacterBuffer, unsigned int uNumOfCharacters)
 {
     return static_cast<unsigned int>(fwrite(pWriteCharacterBuffer,
                                             1,
