@@ -28,7 +28,7 @@ FILE *FileSystemUtils::GetFileObject(void *fileID)
     return static_cast<FILE *>(fileID);
 }
 
-void FileSystemUtils::FileOperationRead(const char fileName [], const char *pBufferToRead)
+void FileSystemUtils::FileOperationRead(const char fileName [], char *pBufferToRead)
 {
     FileSystem::FileObject fileID = FileSystem::OpenFile(fileName, FileSystem::FileTypeRead);
     
